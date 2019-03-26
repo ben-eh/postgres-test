@@ -6,7 +6,7 @@
   <% @category.links.each do |link| %>
     <li>
       <a href="<%= link.url %>" target="_blank"><%= link.name.capitalize %></a>
-      <%= link_to "delete this entry", link_path, method: :delete %>
+      <%= link_to "delete this entry", delete_link_path(link), method: :delete %>
     </li>
   <% end %>
 </ul>

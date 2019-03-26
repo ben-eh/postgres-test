@@ -16,7 +16,7 @@ class LinksController < ApplicationController
   def destroy
     @link = Link.find(params[:id])
     @link.destroy
-    redirect_to
+    raise
   end
 
   private
@@ -26,7 +26,7 @@ class LinksController < ApplicationController
   end
 
   def set_link
-    @link = Link.find(params[:link_id])
+    @link = Link.find(params[:link_id]) if params[:link_id]
   end
 
 end
