@@ -1,5 +1,5 @@
 class LinksController < ApplicationController
-
+  before_action :set_link, only: [:destroy]
 # no index method needed
 
   def new
@@ -13,10 +13,20 @@ class LinksController < ApplicationController
     redirect_to categories_path
   end
 
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    redirect_to
+  end
+
   private
 
   def link_params
     params.require(:link).permit(:name, :url, :category_id)
+  end
+
+  def set_link
+    @link = Link.find(params[:link_id])
   end
 
 end
