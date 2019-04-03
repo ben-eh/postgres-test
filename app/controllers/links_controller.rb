@@ -1,6 +1,10 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: [:destroy]
+  before_action :set_link, only: [:destroy, :edit, :update, :destroy]
 # no index method needed
+
+  def index
+    @links = Link.all
+  end
 
   def new
     @link = Link.new
@@ -13,10 +17,22 @@ class LinksController < ApplicationController
     redirect_to categories_path
   end
 
+  def edit
+    @link = Link.find(params[:id])
+    @categories = Category.all
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    @link.update(link_params)
+  end
+
   def destroy
     @link = Link.find(params[:id])
+    # @category = @link.category
     @link.destroy
-    raise
+    redirect_to root_path
+    # raise
   end
 
   private

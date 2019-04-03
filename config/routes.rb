@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :categories do
-  end
+  resources :categories
+  resources :links, except: :index
 
-  delete "delete_link", to: "links#destroy"
-  get "new_link", to: "links#new"
-  post "links", to: "links#create"
+  # get "link/new", to: "links#new"
+  # post "link", to: "links#create"
+  # delete "link/:id", to: "links#destroy"
 
   root 'categories#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
