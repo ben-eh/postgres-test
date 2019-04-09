@@ -15,8 +15,9 @@
  */
 
 body {
-  background-image: url("astero.jpg");
+  background: url("astero.jpg") fixed no-repeat center center;
   background-size: cover;
+  background-position: 0 0;
   margin: 0;
 }
 
@@ -27,7 +28,7 @@ body {
 
 .header {
   width: 100%;
-  background-color: grey;
+  /*background-color: grey;*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +38,8 @@ body {
   margin: 0;
   padding: 20px;
   text-align: center;
+  color: white;
+  background-color: black;
 }
 
 .content_div {
@@ -66,4 +69,9 @@ ul {
 .content a {
   color: white;
   /*background-color: black;*/
+}
+
+.header_item a {
+  text-decoration-line: none;
+  color: white;
 }
