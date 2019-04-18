@@ -1,13 +1,30 @@
-<%= link_to image_tag("star.svg", width: 50), root_path %>
+<div class="container">
+  <div class="header">
+    <div class="header_item" style="margin-left: 2%">
+      <%= link_to "Back to Start", root_path %>
+    </div>
+    <div class="header_item">
+      <h1><%= @category.name %></h1>
+    </div>
+    <div class="header_item" style="margin-right: 2%">
+      <%= link_to "Add a New Link", new_link_path %>
+    </div>
+  </div>
 
-<h1><%= @category.name %></h1>
+  <div class="content_div">
+    <div class="content">
+      <ul>
+        <% @category.links.each do |link| %>
+          <li>
+            <a href="<%= link.url %>" target="_blank"><%= link.name.capitalize %></a>
+            <%= link_to image_tag("edit.svg", class: "edit-icon"), edit_link_path(link.id) %>
+            <%= link_to image_tag("trash.png", class: "trash-icon"), link_path(link.id), method: :delete %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <% @category.links.each do |link| %>
-    <li>
-      <a href="<%= link.url %>" target="_blank"><%= link.name.capitalize %></a>
-      <%= link_to "edit", edit_link_path(link.id) %>
-      <%= link_to "delete", link_path(link.id), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+
+

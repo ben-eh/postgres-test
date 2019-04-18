@@ -30,7 +30,7 @@ body {
   width: 100%;
   /*background-color: grey;*/
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -56,6 +56,12 @@ body {
   margin-top: 5%;
 }
 
+.content h2 {
+  color: white;
+  letter-spacing: 1px;
+
+}
+
 ul {
   list-style-type: none;
   padding-inline-start: 0;
@@ -74,4 +80,24 @@ ul {
 .header_item a {
   text-decoration-line: none;
   color: white;
+}
+
+.header_item a:hover {
+  text-decoration-line: underline;
+}
+
+.form {
+  color: white;
+}
+
+.trash-icon {
+  color: white;
+  height: 1em;
+  background-color: white;
+}
+
+.edit-icon {
+  color: white;
+  height: 1em;
+  background-color: white;
 }
