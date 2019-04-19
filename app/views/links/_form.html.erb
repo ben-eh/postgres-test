@@ -1,9 +1,9 @@
 <%= form_for @link do |x| %>
-  <%= x.text_field(:name) %>
   <%= x.label(:name) %>
-  <%= x.text_field(:url) %>
+  <%= x.text_field(:name) %>
   <%= x.label(:url) %>
-  <ul>
+  <%= x.text_field(:url) %>
+  <ul style="columns: <%= @category_columns_count %>">
     <% @categories.each do |category| %>
       <li>
         <!-- radio_button(object_name, method, tag_value, options={}) -->

@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:edit, :update, :destroy]
+  before_action :set_category_columns, only: [:new]
 # no index method needed
 
   def index
@@ -41,6 +42,16 @@ class LinksController < ApplicationController
 
   def set_link
     @link = Link.find(params[:id])
+  end
+
+  def set_category_columns
+    @categories = Category.all
+    count = @categories.count
+    if count / 8 == 0
+      @category_columns_count = 1
+    else
+      @category_columns_count = count / 8 + 1
+    end
   end
 
 end
