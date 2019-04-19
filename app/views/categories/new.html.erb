@@ -15,9 +15,9 @@
     <div class="content">
       <%= render 'form' %>
 
-      <h2>Existing Categories</h2>
+      <h2 style="margin-top: 2.5em">Existing Categories</h2>
 
-      <ul>
+      <ul style="columns: <%= @category_columns_count %>">
         <% @categories.each do |category| %>
         <li>
           <%= category.name %>
