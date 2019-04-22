@@ -14,7 +14,7 @@
   <div class="content_div">
     <div class="content">
       <ul style="columns: <%= @links_columns_count %>">
-        <% @category.links.each do |link| %>
+        <% @links.each do |link| %>
           <li>
             <a href="<%= link.url %>" target="_blank"><%= link.name %></a>
             <!-- <%= link_to image_tag("edit.svg", class: "edit-icon"), edit_link_path(link.id) %> -->

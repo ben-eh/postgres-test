@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
 
   def show
     # raise
-
+    @links = @category.links.all.order(:name)
   end
 
   def edit
